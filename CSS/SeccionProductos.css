@@ -1,0 +1,356 @@
+/* IMPORTAR FUENTES: Rye,Karla,Lato*/
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rye&display=swap');
+/* INICIALIZAR ESTILOS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Declaración de variables */
+:root {
+    font-size: 1.5em;
+    --color-primario: #353232;
+    --color-secundario: #b4a9a97d;
+    --color-terciario: #d20000;
+    --color-texto: #ffffff;
+    --color-bordes: #000000;
+    --color-titulos: #580202;
+    --color-sombras:rgb(50, 2, 2)0;
+}
+
+/* ESTILOS POR DEFECTO */
+html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;}
+body
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(36, 32, 38);
+    color: var(--color-texto);
+}
+h1, h2, h3 {
+    font-family: "Rye", serif;
+    color: var(--color-titulos);
+}
+button {
+    font-family: 'Merriweather', sans-serif;
+    font-style: italic;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    width: 10em;
+    height: 2.5em;
+    padding: 0.1em;
+    border: var(--color-bordes) 3px groove;
+    border-radius: 0.5em;
+    text-align: center;
+    transition: background-color 3s,transform 3s,box-shadow 2s;
+}
+button:hover
+{
+    background-color: var(--color-terciario);
+    font-weight: bold;
+    transform: translate(-0.2em,-0.2em);
+    border: var(--color-bordes) inset;
+    box-shadow: var(--color-sombras) 0.2em 0.5em 0.1em;
+}
+
+/* CABECERA */
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    background-color: #000000;
+}
+.ContenedorLogo
+{
+    max-width: 3em;
+}
+.logoNovaShop
+{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+nav
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    justify-content: center;
+}
+#MensajeEspera
+{
+    display: "none";
+}
+#SeccionProductos
+{
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ul
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);;
+    justify-items: center;
+    gap: 1em;
+}
+li
+{
+    width: 11rem;
+    height: auto;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    padding: 1em;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--color-secundario); 
+    color: var(--color-texto); 
+    border: 4px groove var(--color-bordes); 
+    border-radius: 20px;
+    text-align: center;
+    transition: box-shadow 2s,transform 2s;
+}
+li:hover
+{
+    box-shadow: 0.5em 0.5em 0.5em var(--color-sombras);
+    transform: translate(-1em,-1em);
+}
+li > img
+{
+    width: 9em;
+    height: 15em;
+    border-radius: 12px;
+}
+#GifCarga
+{
+    width: 7em;
+    height: 7em;
+}
+/*SECCIÓN DE DETALLES*/
+#SeccionDetalle {
+    display: none;
+    flex-direction: column;
+    align-items: center; 
+    align-content: center;
+    gap: 0;
+    width: 100%;
+    height: auto;
+    animation: DeslizarArriba 4s ease;
+}
+#SeccionDetalle > .VolverAtras,#SeccionCarrito > .VolverAtras
+{
+    display: flex;
+    flex-direction: column;
+    align-items: end; 
+    width: 130%;
+    height: 2.5em;
+}
+#SeccionDetalle > .VolverAtras > button,
+#SeccionCarrito > .VolverAtras > button
+{
+    color: var(--color-terciario);
+    font-size: 2em;
+    font-weight: bold;
+    background: none;
+    border: none;
+    transition: text-shadow 2s,font-size 3s;
+    box-shadow: none;
+    animation: Resaltar2 1s ease forwards;
+    animation-delay: 5s;
+    margin-right: 0.5em;
+}
+#SeccionDetalle > .VolverAtras > button:hover,
+#SeccionCarrito > .VolverAtras > button:hover
+{
+    text-shadow: 0.1em 0.1em 0.1em var(--color-sombras);
+    font-size: 2.1em;
+}
+#SeccionDetalle > #detalle
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    width: 100%;
+    height: auto;
+}
+#SeccionDetalle > #detalle div
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+    width: 100%;
+    height: auto;
+}
+#SeccionDetalle > #detalle div > #ImagenProducto
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    background-color: var(--color-secundario); 
+    color: white; 
+    border: 4px groove var(--color-bordes); 
+    border-radius: 20px;
+    width: 20em;
+    height: auto;
+    margin-left: 1em;
+    padding: 0.3em;
+    font-size: 1em;
+    transition: box-shadow 2s,transform 2s;
+}
+#ImagenProducto:hover
+{
+    box-shadow: 0.5em 0.5em 0.5em var(--color-sombras);
+    transform: translate(-1em,-1em);
+}
+#SeccionDetalle > #detalle div > #ImagenProducto > img
+{
+    width: 100%; 
+    height: auto; 
+    border-radius: 12px;
+}
+#SeccionDetalle > #detalle div > #DetalleProducto
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em;
+    width: 60em;
+    height: auto;
+    background-color: var(--color-secundario); 
+    color: var(--color-texto); 
+    border: 4px groove var(--color-bordes); 
+    border-radius: 20px;
+    padding: 0.3em;
+}
+#SeccionDetalle > #detalle > #DetalleProducto > p
+{
+    font-size: 1em;
+    cursor: default;
+}
+#SeccionDetalle > #detalle > #DetalleProducto > p > b
+{
+    transition: color 0.5s,text-shadow 0.5s;
+}
+#SeccionDetalle > #detalle > #DetalleProducto > p > b:hover
+{
+    color: var(--color-terciario);
+    text-shadow: 0.1em 0.1em 0.5em rgb(180, 223, 226);
+}
+
+/* SECCION CARRITO */
+#SeccionCarrito
+{
+    display: none;
+    flex-direction: column;
+    align-items: center; 
+    align-content: center;
+    gap: 1em;
+    width: 100%;
+    height: auto;
+    animation: DeslizarArriba 4s ease;
+}
+#SeccionCarrito .Contenido
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+/* ANIMACIONES */
+@keyframes Resaltar2 
+{
+    0%
+    {
+        transform: rotate(-30deg);
+        text-shadow: 0.1em 0.1em 0.1em rgb(65, 0, 0,0);
+    }
+    50%
+    {
+        transform: rotate(30deg);
+        text-shadow: 0.1em 0.1em 0.1em rgb(65, 0, 0,0.5);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+        text-shadow: 0.1em 0.1em 0.1em rgb(65, 0, 0,0);
+    }
+}
+@keyframes DeslizarArriba 
+{
+    0% {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 900px) {
+    header {
+        flex-direction: column; 
+        padding: 0.5em;
+    }
+    nav {
+        gap: 0.8em;
+    }
+    ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+    }
+
+    li {
+        width: 10rem;
+        font-size: 0.9em;
+    }
+    li > img
+    {
+        width: 7em;
+        height: 10em;
+        border-radius: 12px;
+    }
+    #ImagenProducto:hover
+    {
+        box-shadow: none;
+        transform: none;
+    }
+    #SeccionDetalle > #detalle div > #ImagenProducto > img
+    {
+        width: 100%; 
+        height: auto; 
+        border-radius: 12px;
+    }
+    #SeccionDetalle > #detalle div > #ImagenProducto {
+        width: 14em;
+    }
+    #SeccionDetalle > #detalle div > #DetalleProducto {
+        width: 90%;
+    }
+    #SeccionCarrito .Contenido {
+        flex-direction: column;
+        align-items: center;
+    }
+    #SeccionDetalle > #detalle {
+        gap: 1em;
+    }
+}
