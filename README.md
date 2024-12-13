@@ -2,7 +2,7 @@
 
 ![image](https://github.com/user-attachments/assets/2a4e0571-a1a0-4c0c-b864-fe825077b1e9)
 
-Ver proyecto/See project: https://tienda-store.vercel.app/HTML/SeccionProductos.html
+Ver proyecto/See project: tienda-store.vercel.app
 
 # 📚 Recursos del Proyecto
 
